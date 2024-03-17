@@ -1,16 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
     <title>Home Work JS</title>
 </head>
+
 <body>
-    <h1>"My home Work javascript"</h1>
+    <h1>"My home work javascript"</h1>
+
+    <hr>
+    <p class="exercise">Домашнє завдання № 4 задача № 1 знаходиться у файлі script-hw4.js <a href="https://github.com/Ruslan-lion/genius-homework-JS/blob/main/script-hw4.js" target="_blank">за посиланням тут</a></p>
+    <hr>
+
+    <section>
+        <hr>
+        <p class="exercise">Домашнє завдання № 4 задача № 2</p>
+        <hr>
+        <div class="content">
+            <button id="htmlButton" class="button">HTML</button>
+            <p id="htmlHint" class="html-hint"><span><a href="https://uk.wikipedia.org/wiki/HTML"
+                        target="_blank">HTML</a></span> (англ. <em>HyperText Markup Language</em> — мова розмітки
+                гіпертексту) — стандартизована мова
+                розмітки документів для перегляду вебсторінок у браузері.</p>
+        </div>
+
+        <div class="content">
+            <button id="cssButton" class="button">CSS</button>
+            <p id="cssHint" class="css-hint"><span><a href="https://uk.wikipedia.org/wiki/CSS"
+                        target="_blank">CSS</a></span> (англ. <em>Cascading Style Sheets</em>, укр. Каскадні таблиці
+                стилів) — це спеціальна мова стилю
+                сторінок, що використовується для опису їхнього зовнішнього вигляду.</p>
+        </div>
+    </section>
+
+    <section>
+        <hr>
+        <p class="exercise">Домашнє завдання № 4 задача№ 3</p>
+        <hr>
+        <form id="shopForm">
+            <fieldset class="field-form">
+                <legend class="legend-text">Калькулятор вартості товару</legend>
+                <div>
+                    <label for="productName" class="form-label">Назва товару:</label>
+                    <input class="form-input" name="productName" type="text" id="productName" required>
+                </div>
+                <div>
+                    <label for="priceUnit" class="form-label">Ціна за кг (грн):</label>
+                    <input class="form-input" name="priceUnit" type="number" id="priceUnit" min="0" step="0.1" required>
+                </div>
+                <div>
+                    <label for="quantity" class="form-label">Кількість (кг):</label>
+                    <input class="form-input" name="quantity" type="number" id="quantity" min="0" step="0.1" required>
+                </div>
+
+                <button class="button" type="submit" onclick="shop()">Порахувати вартість</button>
+                <div id="result"></div>
+            </fieldset>
+        </form>
+    </section>
+
+
     <script src="./script-hw0.js"></script>
     <script src="./script-hw1.js"></script>
     <script src="./script-hw2.js"></script>
     <script src="./script-hw3.js"></script>
+    <script src="./script-hw4.js"></script>
 </body>
+
 </html>

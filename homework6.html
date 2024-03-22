@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style type="text/css">
+    div {
+      padding: 20px; 
+      background-color: #deefd3;
+    }
+    h1, h2 {
+      text-align: center;
+      text-shadow:
+  1px 1px 1px #e82389;
+    }
+    p {
+      font-size: 20px;
+      color: blue; 
+      font-weight: bold"
+    }
+  </style>
+  <title>Home Work JS</title>
+</head>
+
+<body>
+
+  <h1>Домашнє завдання 6 до модуля № 27</h1>
+
+  <div>
+<h2>Домашнє завдання</h2>
+<h2>----1----</h2>
+<p>
+  Створіть функцію-конструктор <b>Calculator</b>, який створює об’єкти з трьома методами:
+</p>
+  <p><b>read()</b> запитує два значення за допомогою prompt і запам’ятовує їх у властивостях об’єкта.</p>
+
+<p><b>sum()</b> повертає суму цих властивостей.</p>
+<p><b>mul()</b> повертає результат множення даних властивостей.</p>
+<div id="result"></div>
+  </div>
+  
+  <script>
+// Домашнє завдання
+// ----1----
+// Створіть функцію-конструктор Calculator, який створює об’єкти з трьома методами:
+// read() запитує два значення за допомогою prompt і запам’ятовує їх у властивостях об’єкта.
+// sum() повертає суму цих властивостей.
+// mul() повертає результат множення даних властивостей.
+
+    function Calculator(){
+
+      this.read = function() {
+
+        do {
+        this.number1 = +prompt('Введіть перше число:', 0);
+        // якщо відмінить то смисл дальше перевіряти.
+        if(this.number1 === null) return null;
+        // перевіряє на не число.
+        if(isNaN(this.number1)) {
+          alert('Будь ласка, введіть число!');
+        }
+
+        } while (isNaN(this.number1));
+        
+        do {
+        this.number2 = +prompt('Введіть друге число:', 0);
+        if(this.number2 === null) return null;
+        if(isNaN(this.number2)) {
+          alert('Будь ласка, введіть число!');
+        }
+
+        } while (isNaN(this.number2));
+      };
+
+      this.sum = function() {
+        return this.number1 + this.number2;
+      };
+
+      this.mul = function() {
+        return this.number1 * this.number2;
+      };
+    }
+
+let calculator = new Calculator();
+calculator.read();
+
+alert( 'Сума додавання = '+calculator.sum() );
+alert( 'Сума множення = '+calculator.mul() );
+
+// підкажіть будь-ласка чи правильно так робити перевірки чи краще їх виносити за межі функції-конструктора, чи взагалі їх не робити?
+// Просто я думав над тим щоб зробити окрему функцію і мабуть так би було б правильно?
+// Дякую!
+  </script>
+</body>
+
+</html>

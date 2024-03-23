@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div data-widget-name="menu">Виберіть жанр</div>
+  <p></p>
+  <script>
+
+    const elem = document.querySelector('[data-widget-name]');
+
+    if(elem) {
+      const elemValue = elem.getAttribute('data-widget-name');
+      console.log(`Елемент з атрибутом data-widget-name має значення: ${elemValue}.`);
+    } else {
+      console.log(`Елемент з атрибутом data-widget-name не знайдено.`);
+    }
+
+    // опис завдання
+    const elementH1 = document.createElement('h1');
+    elementH1.textContent = 'Домашнє завдання до модуля №28';
+    const elementH2 = document.createElement('h2');
+    elementH2.textContent = 'Домашнє завдання -----1-----';
+    const elementP = document.createElement('p');
+    elementP.textContent = `Напишіть код, щоб вибрати елемент з атрибутом data-widget-name з документа та прочитати його значення`;
+    
+    document.body.insertBefore(elementH1, elem);
+    document.body.insertBefore(elementH2, elem);
+    document.body.insertBefore(elementP, elem);
+
+const stylesText = {
+  fontSize: "20px",
+  color: "#113419",
+  'font-weight': "bold",  
+}
+
+    elementH1.style.color = "blue";
+    elementH1.style.textShadow = "2px 1px 2px #e82389";
+    elementH2.style.color = "#6a0994";
+    Object.assign(elem.style, stylesText);
+    Object.assign(elementP.style, stylesText);
+
+  </script>
+</body>
+</html>

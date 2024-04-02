@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    //     Домашнє завдання до модуля №32
+
+    //     Домашнє завдання -----1-----
+
+    // Напишіть функцію printNumbers(from, to) яка виводить число кожну секунду,
+    // починаючи від from і закінчуючи to.
+    // Зробіть два варіанти рішення.
+    // Використовуючи setInterval.
+    // Використовуючи вкладений setTimeout
+
+    // Варіант 1
+
+    // function printNumbers(from, to) {
+    //   let startOfCountdown = from;
+
+    //   let timer = setInterval(() => {
+    //     console.log(startOfCountdown);
+
+    //     if (startOfCountdown === to) {
+    //       clearInterval(timer);
+    //     }
+    //     startOfCountdown++;
+    //   }, 1000);
+    // }
+
+    // printNumbers(1, 15);
+
+
+
+
+    // Варіант 2
+
+    //     function printNumbers(from, to) {
+
+    //       let startOfCountdown = from;
+
+    //       function timer() {
+    //         console.log(startOfCountdown);
+
+    //         if (startOfCountdown < to) {
+    //           setTimeout(timer, 1000);
+    //         }
+    //         startOfCountdown++;
+    //       };
+    //       timer();
+    //     }
+
+    // printNumbers(1, 15);
+
+
+
+
+    //     Домашнє завдання -----2-----
+    // Вбудована функція setTimeout використовує колбек-функції. Створіть
+    // альтернативу яка базується на промісах.
+    // Функція delay(ms) повинна повертати проміс, який перейде в стан resolved через
+    // ms мілісекунд, так щоб ми могли додати до нього .then:
+    // function delay(ms) {
+    // // ваш код
+    // }delay(3000).then(() => alert('виконалось через 3 секунди'));
+
+    function delay(ms) {
+
+      return new Promise((resolve, reject) => {
+        if (ms < 0) {
+          reject(new Error(`Час затримки не може бути від'ємним`));
+        } else {
+          setTimeout(resolve, ms);
+        }
+      })
+    }
+    delay(3000)  //можна поставити і від'ємне число
+    .then(() => alert('виконалось через 3 секунди'))
+    .catch(error => alert(error));
+
+// можливо і не можна від'ємне число ввести, але прикольно і кажись працює.
+  </script>
+</body>
+
+</html>
